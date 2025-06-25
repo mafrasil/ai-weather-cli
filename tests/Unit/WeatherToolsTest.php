@@ -12,7 +12,6 @@ class WeatherToolsTest extends TestCase
 {
     public function test_weather_tool_integration(): void
     {
-        // Mock the weather API
         Http::fake([
             'geocoding-api.open-meteo.com/*' => Http::response([
                 'results' => [
@@ -127,7 +126,6 @@ class WeatherToolsTest extends TestCase
         $weatherService = new WeatherService();
         $forecastTool = new ForecastTool($weatherService);
 
-        // Test "tomorrow"
         $result = $forecastTool->__invoke('London', 'tomorrow');
         $this->assertStringContainsString('London', $result);
         $this->assertStringContainsString('forecast', $result);

@@ -16,7 +16,6 @@ class WeatherServiceTest extends TestCase
 
     public function test_can_get_current_weather(): void
     {
-        // Mock the HTTP calls to Open-Meteo API
         Http::fake([
             'geocoding-api.open-meteo.com/*' => Http::response([
                 'results' => [
@@ -47,7 +46,7 @@ class WeatherServiceTest extends TestCase
         $result = $weatherService->getCurrentWeather('Lisbon');
 
         $this->assertStringContainsString('Lisbon', $result);
-        $this->assertStringContainsString('23°C', $result); // rounded temperature
+        $this->assertStringContainsString('23°C', $result);
         $this->assertStringContainsString('65%', $result);
         $this->assertStringContainsString('Mainly clear', $result);
     }

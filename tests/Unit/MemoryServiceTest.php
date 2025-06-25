@@ -53,7 +53,6 @@ class MemoryServiceTest extends TestCase
 
     public function test_can_load_existing_memories(): void
     {
-        // Create some test memories
         $this->user->memories()->create([
             'key' => 'home_location',
             'value' => ['data' => 'Lisbon'],
