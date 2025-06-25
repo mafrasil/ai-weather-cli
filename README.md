@@ -24,8 +24,8 @@ A simple CLI-based AI weather chatbot built with Laravel and Prism PHP.
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
-cd aiweatherchat
+git clone https://github.com/mafrasil/ai-weather-cli.git
+cd ai-weather-cli
 ```
 
 2. Install dependencies:
@@ -46,8 +46,11 @@ php artisan key:generate
 ```bash
 PRISM_PROVIDER=anthropic
 PRISM_PROVIDER_MODEL=claude-3-5-haiku-20241022
+
 ANTHROPIC_API_KEY=sk-ant-xxx
 ```
+
+See `config/prism.php` for other providers and models.
 
 5. Set up database:
 
